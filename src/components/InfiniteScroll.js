@@ -11,6 +11,13 @@ const style = {
   alignItems: "center",
 };
 
+const buttonStyle = {
+    padding: "10px 20px",
+    backgroundColor: "lightgray",
+    border: '1px solid gray',
+    borderRadius: '5px',
+}
+
 const InfiniteScrollList = () => {
   const [items, setItems] = useState(
     Array.from({ length: 20 }, (_, index) => index + 1)
@@ -57,7 +64,7 @@ const InfiniteScrollList = () => {
         {items?.map((item, index) => (
           <div style={style} key={item}>
             <div>Item - #{item}</div>
-            <button onClick={() => handleDeleteItem(index)}>Delete</button>
+            <button style={buttonStyle} onClick={() => handleDeleteItem(index)}>Delete</button>
           </div>
         ))}
       </InfiniteScroll>
